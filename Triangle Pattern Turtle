@@ -1,0 +1,14 @@
+# By: Ratan Raj Ojha
+
+from turtle import *
+
+def tri():
+    speed(100)
+    bgcolor('black')
+    C=['red','green','blue']
+    for i in range(300,5,-1):
+        pencolor(C[i%3])
+        forward(i)
+        left(121)
+tri()
+mainloop()
