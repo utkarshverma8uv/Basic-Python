@@ -1,0 +1,12 @@
+from turtle import *
+def Tur():
+    speed(100)
+    bgcolor("grey")
+    C=['red','green','blue','orange','black']
+    bgcolor("white")
+    pensize(2)
+    for i in range(200):
+        pencolor(C[i%5])
+        forward(i)
+        left(71)
+Tur()
