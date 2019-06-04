@@ -1,0 +1,95 @@
+def goto(lineNum) :
+    global line
+    line = lineNum
+print("Welcome to tic tac toe","Player 1: X and Player 2: O", sep="\n")
+print("Your response must be integer from 1 to 9", "[1,2,3]","[4,5,6]","[7,8,9]",sep="\n")
+print("Let the game begin")
+input("Press Enter to continue...")
+P1='X'
+P2='O'
+R1=["   ","   ","   "]
+R2=["   ","   ","   "]
+R3=["   ","   ","   "]
+for i in ['X','O','X','O','X','O','X','O','X']:
+    print("Its the chance of ",i)
+    response=int(input("Enter spot to be marked: "))
+        
+    if response==1:
+        R1[0]=i
+    elif response==2:
+        R1[1]=i
+    elif response==3:
+        R1[2]=i
+    elif response==4:
+        R2[0]=i
+    elif response==5:
+        R2[1]=i
+    elif response==6:
+        R2[2]=i
+    elif response==7:
+        R3[0]=i
+    elif response==8:
+        R3[1]=i
+    elif response==9:
+        R3[2]=i
+    else:
+            print('Incorrect response')
+    print(R1,R2,R3,sep="\n")
+    for x in [R1,R2,R3]:
+        if x[0]==x[1] and x[1]==x[2] and x[0]!="   ": 
+            print(x[0]," Won the game, thanks for playing")
+            break
+            
+    for y in range(3): 
+        if R1[y]==R2[y] and R2[y]==R3[y] and R1[y]!="   ": 
+            print(R1[y]," Won the game, thanks for playing")
+            
+            break
+            
+    if R1[0]==R2[1] and R2[1]==R3[2] and R1[0]!="   ": 
+        print(R1[0]," Won the game, thanks for playing")
+        
+        break
+        
+    if R1[2]==R2[1] and R2[1]==R3[0] and R1[2]!="   ": 
+        print(R1[2]," Won the game, thanks for playing")
+        
+        break
+        
+    for x in range(1):
+        if R1[0]!="   " and R2[0]!="   " and R3[0]!="   ": 
+            pass
+        elif R1[1]!="   " and R2[1]!="   " and R3[1]!="   ":
+            pass
+        elif R1[2]!="   " and R2[2]!="   " and R3[2]!="   ": 
+            print("Game is Draw, thanks for playing")
+            break
+
+
+
+input("Press Enter to exit...")
+exit()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
