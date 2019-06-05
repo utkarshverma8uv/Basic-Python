@@ -1,16 +1,20 @@
-def goto(lineNum) :
-    global line
-    line = lineNum
-win=0
+## 
+## Made by; Ratan R. Ojha and Utkarsh Verma
+##
+
 print("Welcome to tic tac toe","Player 1: X and Player 2: O", sep="\n")
 print("Your response must be integer from 1 to 9", "[1,2,3]","[4,5,6]","[7,8,9]",sep="\n")
 print("Let the game begin")
+
 input("Press Enter to continue...")
 P1='X'
 P2='O'
+
 R1=["   ","   ","   "]
 R2=["   ","   ","   "]
 R3=["   ","   ","   "]
+
+K=0
 for i in ['X','O','X','O','X','O','X','O','X']:
     print("Its the chance of ",i)
     try:
@@ -28,15 +32,15 @@ for i in ['X','O','X','O','X','O','X','O','X']:
     for x in [R1,R2,R3]:
         if x[0]==x[1] and x[1]==x[2] and x[0]!="   ": 
             print(x[0]," Won the game, thanks for playing")
-            win=1
-    if win==1:
+            K=1
+    if K==1:
         break
             
     for y in range(3): 
         if R1[y]==R2[y] and R2[y]==R3[y] and R1[y]!="   ": 
             print(R1[y]," Won the game, thanks for playing")
-            win=1
-    if win==1:
+            K=1
+    if K==1:
         break
             
     if R1[0]==R2[1] and R2[1]==R3[2] and R1[0]!="   ": 
