@@ -1,5 +1,5 @@
 ## 
-## Made by; Ratan R. Ojha and Utkarsh Verma
+## Made by Ratan R. Ojha and Utkarsh Verma
 ##
 
 print("Welcome to tic tac toe","Player 1: X and Player 2: O", sep="\n")
@@ -15,20 +15,31 @@ R2=["   ","   ","   "]
 R3=["   ","   ","   "]
 
 K=0
-for i in ['X','O','X','O','X','O','X','O','X']:
+for i in ['X','O','X','O','X','O','X','O','X','O']:
     print("Its the chance of ",i)
-    try:
-        response=int(input("Enter spot to be marked: "))
-    except:
-        print('Invalid Input')
-        response=int(input("Enter spot to be marked: "))
+    
+    T=0
+    while T==0:
+        try:
+            response=int(input("Enter spot to be marked: "))
+        except:
+            pass
+        if response in [0,1,2,3,4,5,6,7,8,9]:
+            T=1
+        else:
+            print("Invalid input")
+    
     if response in range(1,4):
         R1[response-1]=i
+        
     elif response in range(4,7):
         R2[response-4]=i
     elif response in range(7,10):
         R3[response-7]=i
+
     print(R1,R2,R3,sep="\n")
+
+
     for x in [R1,R2,R3]:
         if x[0]==x[1] and x[1]==x[2] and x[0]!="   ": 
             print(x[0]," Won the game, thanks for playing")
@@ -54,10 +65,13 @@ for i in ['X','O','X','O','X','O','X','O','X']:
         break
         
     for x in range(1):
-        if ((R1[0]!="   " and R2[0]!="   " and R3[0]!="   ") and(R1[1]!="   " and R2[1]!="   " and R3[1]!="   ") and
-        (R1[2]!="   " and R2[2]!="   " and R3[2]!="   ")): 
+        if ((R1[0]!="   " and R2[0]!="   " and R3[0]!="   ") and(R1[1]!="   " and R2[1]!="   " and R3[1]!="   ") and (R1[2]!="   " and R2[2]!="   " and R3[2]!="   ")): 
             print("Game is Draw, thanks for playing")
-            break
+            K=1
+    if K==1:
+        break
+
+
 
 input("Press Enter to exit...")
-exit()
+quit()
