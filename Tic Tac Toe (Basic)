@@ -15,7 +15,7 @@ R2=["   ","   ","   "]
 R3=["   ","   ","   "]
 
 ############################
-#              INPUT LOGIC                                           
+#                           INPUT LOGIC                             #                
 ############################
 
 K=0
@@ -30,23 +30,41 @@ for i in ['X','O','X','O','X','O','X','O','X','O']:
             print("Invalid input")
             continue
         if response in [1,2,3,4,5,6,7,8,9]:
-            T=1
+
+            if response in range(1,4):
+                if R1[response-1]=="   ":
+                    R1[response-1]=i
+                    T=1
+                else:
+                    print("Already marked")
+                    T=0
+
+            elif response in range(4,7):
+                if R2[response-4]=="   ":
+                    R2[response-4]=i
+                    T=1
+                else:
+                    print("Already marked")
+                    T=0
+
+            elif response in range(7,10):
+                if R3[response-7]=="   ":
+                    R3[response-7]=i
+                    T=1
+                else:
+                    print("Already marked")
+                    T=0
+
         else:
             print("Invalid input")
             T=0
     
-    if response in range(1,4):
-        R1[response-1]=i
-        
-    elif response in range(4,7):
-        R2[response-4]=i
-    elif response in range(7,10):
-        R3[response-7]=i
+    
 
     print(R1,R2,R3,sep="\n")
 
 ################################
-#                 WIN LOGIC                                            
+#                               WIN LOGIC                                            #
 ################################
 
     for x in [R1,R2,R3]:
